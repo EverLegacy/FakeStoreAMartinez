@@ -22,7 +22,7 @@ import com.pjsoft.fakestoreapp.ui.theme.HomeScreenRoute
 import com.pjsoft.fakestoreapp.ui.theme.ProductDetailScreenRoute
 
 /*
-* 1. Crear Modelosaaaa
+* 1. Crear Modelosaaaaadsasdasdasdasd
 * 2. Crear Servicios fetch, axios, httpClient -> Retrofit
 * 3. Consumir Servicios
 * 4. Refrescar UI
