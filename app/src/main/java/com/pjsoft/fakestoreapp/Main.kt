@@ -9,11 +9,11 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.*
 
 fun main(){
-    //hilo
+
     println("Inicio en hilo: ${Thread.currentThread().name}")
     cWithContext()
     println("Fin en hilo: ${Thread.currentThread().name}")
-    // Corrutinas
+
 }
 
 fun MyGlobal(){
@@ -22,15 +22,13 @@ fun MyGlobal(){
     }
 }
 
-// suspend fun
+
 suspend fun SaludoAsincrono(){
     println("Hola desde asincrono")
     delay(2000)
     println("Ya termine de saludarte")
 }
-// Dispatchers
-// Edificio 1. App - UI
-// Edificios 2.
+
 fun cAsync(){
     runBlocking {
         val result = async(Dispatchers.IO) {

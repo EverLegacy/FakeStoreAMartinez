@@ -15,7 +15,7 @@ fun main(){
     val a = 1
     val b = 2
 }
-//FUNCION QUE RECIBA DOS NUMEROS Y QUE REGRESE DOS NUMEROS
+//FUNCION QUE RECIBA DOS
 fun operacionDeNumeros(a:Int,b:Int, operacion : (Int,Int) -> Int){
     println("El numero a vale: $a")
     println("El numero b vale: $b")
@@ -39,7 +39,7 @@ fun BookCard(onClick : () -> Unit){
                 onClick()
             }
     ) {
-        // BLA BLA BLA BLA
+
     }
 }
 

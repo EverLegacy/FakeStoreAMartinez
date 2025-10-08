@@ -37,6 +37,7 @@ fun ProductCard(
                 .height(IntrinsicSize.Min),
             verticalAlignment = Alignment.CenterVertically
         ) {
+            // Product Image
             Image(
                 painter = rememberAsyncImagePainter(product.image),
                 contentDescription = product.title,
@@ -48,6 +49,7 @@ fun ProductCard(
 
             Spacer(modifier = Modifier.width(14.dp))
 
+
             Column(
                 modifier = Modifier.weight(1f)
             ) {
@@ -57,4 +59,15 @@ fun ProductCard(
                     color = MaterialTheme.colorScheme.onSurface
                 )
 
-                Spacer(modifie
+                Spacer(modifier = Modifier.height(4.dp))
+
+                Text(
+                    text = "$${product.price}",
+                    style = MaterialTheme.typography.bodyMedium.copy(
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                )
+            }
+        }
+    }
+}
