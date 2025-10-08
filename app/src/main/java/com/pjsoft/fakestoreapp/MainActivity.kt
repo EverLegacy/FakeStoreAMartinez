@@ -7,10 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -20,14 +17,6 @@ import com.pjsoft.fakestoreapp.screens.ProductDetailScreen
 import com.pjsoft.fakestoreapp.ui.theme.FakeStoreAppTheme
 import com.pjsoft.fakestoreapp.ui.theme.HomeScreenRoute
 import com.pjsoft.fakestoreapp.ui.theme.ProductDetailScreenRoute
-
-/*
-* 1. Crear Modelosaaaaadsasdasdasdasd
-* 2. Crear Servicios fetch, axios, httpClient -> Retrofit
-* 3. Consumir Servicios
-* 4. Refrescar UI
-* */
-
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,16 +28,17 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     NavHost(
                         navController = navController,
-                        startDestination = HomeScreenRoute
-                    ){
+                        startDestination = HomeScreenRoute,
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(innerPadding)
+                    ) {
                         composable<HomeScreenRoute> {
-                            HomeScreen(
-                                navController
-                            )
+                            HomeScreen(navController = navController)
                         }
-                        composable<ProductDetailScreenRoute> { backStack ->
-                            val args = backStack.toRoute<ProductDetailScreenRoute>()
-                            ProductDetailScreen(args.id)
+                        composable<ProductDetailScreenRoute> {
+                            val args = it.toRoute<ProductDetailScreenRoute>()
+                            ProductDetailScreen(id = args.id)
                         }
                     }
                 }
